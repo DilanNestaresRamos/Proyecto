@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mantenimiento</title>
+    <link rel="stylesheet" type="text/css" href="css/diseño.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>USUARIOS</h1>
+    <div class="container">
+        <div class="row">
+            <form>
+                <fieldset>
+                    <legend>Nombres</legend>
+                    <input type="text" class="form-control" id="nombres" placeholder="Escriba sus nombres"/>
+                    <legend>Apellidos</legend>
+                    <input type="text" class="form-control" id="apellidos" placeholder="Escriba sus apellidos"/>
+                    <legend>Edad</legend>
+                    <input type="text" class="form-control" id="edad" placeholder="Escriba su edad"/>
+                    <br/>
+                    <button type="button" id="Crear" class="btn btn-success">Crear tabla</button>
+                    <button type="button" id="Insertar" class="btn btn-success">Insertar</button>
+                    <button type="button" id="Modificar" class="btn btn-danger">Modificar registro</button>
+                    <button type="button" id="Listar" class="btn btn-success">Listar</button>
+                </fieldset>
+            </form>
+            <br/>
+            <hr/>
+            <h3>LISTA DE USUARIOS</h3>
+            <table class="table table-borderer table-hover" id="ListaUsuarios" style="width: 900px">
+
+            </table>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/mantenimiento.js"></script>
+</body>
+</html>
