@@ -1,4 +1,4 @@
-var nuevoId;
+var nuevoid;
 var db=openDatabase("eva2022","1.0","eva2022",8080);
 
 function limpiar(){
@@ -20,7 +20,7 @@ function eliminarUsuario(){
 				});
 			});
 		});
-		nuevoId=lista[0].substr(2 );
+		nuevoId=lista[0].substr(2);
 		db.transaction(function(transaction){
 			var sql="DELETE FROM usuarios WHERE id="+nuevoId+";"
 			transaction.executeSql(sql,undefined,function(){
@@ -51,7 +51,7 @@ function editarUsuario(){
     document.getElementById("edad").value=lista[3];
     nuevoId=lista[0].substr(2);
     
-    })
+})
 }
 
 //Crea la tabla de usuarios
@@ -88,7 +88,7 @@ function cargarUsuarios(){
                    var nombres= row.nombres;
                    var apellidos= row.apellidos;
                    var edad= row.edad;
-                   $("#ListaUsuarios").append('<tr id="fila'+id+'" class="Reg_U'+id+'"><td><span class="mid">SM'+
+                   $("#ListaUsuarios").append('<tr id="fila'+id+'" class="Reg_SM'+id+'"><td><span class="mid">SM'+
                    id+'</span></td><td><span>'+
                    nombres+'</span></td><td><span>'+
                    apellidos+'</span></td><td><span>'+
@@ -118,7 +118,7 @@ $("#Insertar").click(function(){
         limpiar();
         cargarUsuarios();
     })
-});
+
 
 //Modificar registro
 $("#Modificar").click(function(){
@@ -128,14 +128,12 @@ $("#Modificar").click(function(){
     db.transaction(function(transaction){
         var sql="UPDATE usuarios SET nombres='"+nuevoNombre+"', apellidos='"+nuevoApellido+"', edad='"+nuevaEdad+"' WHERE id="+nuevoId+";"
         transaction.executeSql(sql, undefined, function(){
-            cargarUsuarios();
-            limpiar();
+           cargarUsuarios();
+           limpiar();
         },function(transaction,err){
             alert(err.message);
         })
     })
 })
 
-console.log(lista);
-console.log(celdas);
-console.log(registro);
+})
